@@ -8,6 +8,7 @@ const forcast = require('./utils/forecast')
 // console.log(path.join(__dirname,'../public'))
 
 const app = express(); //Express is a function which doesn't take any parameters instead configure the server by using various methods provided on the application 
+const port = process.env.PORT || 3000
 
 //Define Paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -120,6 +121,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('Server is up and running')
+app.listen(port, () => {
+    console.log('Server is up and running on '+port)
 })
